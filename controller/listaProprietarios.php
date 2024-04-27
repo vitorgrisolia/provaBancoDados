@@ -5,6 +5,7 @@ namespace Controllers\listaPorprietarios;
 use model\proprietarios;
 
 use PDO;
+
 class listaProprietarios {
     private $pdo;
 
@@ -12,13 +13,13 @@ class listaProprietarios {
         $this->pdo = $pdo;
     }
 
-    public function listaPorprietarios() {
-        // Aqui você poderia realizar qualquer lógica de negócios para obter dados do banco de dados
-        // Por exemplo, buscar usuários do banco de dados
-        $stmt = $this->pdo->query("SELECT * FROM users");
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    public function listaProprietarios() {
+        // Obter todos os proprietários usando o método estático all() da classe proprietarios
+        $proprietariosModel = new \proprietarios($this->pdo);
+        $proprietarios = $proprietariosModel->all();
+        
         // Passa os dados para a view
-        include 'listaPorprietarios.php';
+        include 'listaProprietarios.php';
     }
 }
+

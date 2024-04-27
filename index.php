@@ -10,7 +10,7 @@
     <div>
         <nav class="nav flex-column">
             <a class="nav-link active" aria-current="page" href="#">home</a>
-            <a class="nav-link" href="#">Lista de clientes</a>
+            <a class="nav-link" href="/listaproprietarios">Lista de proprietarios</a>
             <a class="nav-link" href="#">cadastro de clientes</a>
             <a class="nav-link" href="#">cadastro de Pets</a>
         </nav>
