@@ -12,22 +12,9 @@ $router = new Router("router");
 $router->namespace("Test");
 
 // Defina as rotas usando os métodos HTTP correspondentes
-$router->get("/index", function () {
-    include __DIR__ . 'provabancodados/index.html';
+$router->get("/", function () {
+    include __DIR__ . 'index.php';
 });
-$router->post("/route/{id}", "Controller:method");
-$router->put("/route/{id}/profile", "Controller:method");
-$router->patch("/route/{id}/profile/{photo}", "Controller:method");
-$router->delete("/route/{id}", "Controller:method");
-
-// Agrupe rotas e namespaces
-$router->group("admin")->namespace("Dash");
-$router->get("/route", "Controller:method");
-$router->post("/route/{id}", "Controller:method");
-
-// Grupo de tratamento de erros
-$router->group("error")->namespace("Test");
-$router->get("/{errcode}", "Coffee:notFound");
 
 // Execute as rotas
 $router->dispatch();
