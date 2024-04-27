@@ -15,6 +15,9 @@ $router->namespace("Test");
 $router->get("/", function () {
     include __DIR__ . 'index.php';
 });
+$router->get("/listaProprietarios", function () {
+    include __DIR__ . 'controller/listaProprietarios.php';
+});
 
 // Execute as rotas
 $router->dispatch();
