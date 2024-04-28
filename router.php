@@ -4,20 +4,20 @@ require_once __DIR__ . '/vendor/autoload.php';
 use CoffeeCode\Router\Router;
 
 // Crie uma instância do Router
-$router = new Router("route");
+$router = new Router("http://localhost/provabancodados");
 
 // Configure as rotas e namespaces
-$router->namespace("Test");
+$router->namespace("Controller");
 
 // Defina as rotas usando os métodos HTTP correspondentes
-$router->get("/home", function () {
-    include __DIR__ . 'index.php';
+$router->get("/", function () {
+    include __DIR__ . '/index.php';
 });
 $router->get("/listaProprietarios", function () {
-    include __DIR__ . 'controller/listaProprietarios.php';
+    include __DIR__ . '/controller/listaProprietarios.php';
 });
 $router->get("/listaPets", function () {
-    include __DIR__ . 'controller/listaPets.php';
+    include __DIR__ . '/controller/listaPets.php';
 });
 
 // Execute as rotas

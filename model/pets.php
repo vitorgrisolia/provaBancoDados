@@ -14,10 +14,8 @@ class Pets extends DataLayer
         parent::__construct("pets", ["id", "nome", "especie", "raca", "idade", "proprietario_id"], "id", true);
         $this->pdo = $pdo;
     }
-
     /**
      * Método para buscar todos os registros da tabela pets.
-     * 
      * @return array
      */
     public function all(): array

@@ -1,15 +1,23 @@
 <?php
 
-use CoffeeCode\DataLayer\DataLayer;
+namespace Model;
 
-class User extends DataLayer
+use CoffeeCode\DataLayer\DataLayer;
+use PDO;
+
+class Proprietarios extends DataLayer
 {
-    /**
-     * User constructor.
-     */
     public function __construct()
     {
-        //string "TABLE_NAME", array ["REQUIRED_FIELD_1", "REQUIRED_FIELD_2"], string "PRIMARY_KEY", bool "TIMESTAMPS"
-        parent::__construct("users", ["first_name", "last_name"]);
+        parent::__construct("proprietarios", ["id", "nome", "telefone", "email"], false);
+    }
+    /**
+     * Método para buscar todos os registros da tabela proprietarios.
+     * @return array
+     */
+    public function all(): array
+    {
+        $stmt = $this->pdo->query("SELECT * FROM proprietarios");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
