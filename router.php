@@ -1,8 +1,6 @@
 <?php
-// Inclua o autoload.php do Composer para carregar automaticamente as classes
 require_once __DIR__ . '/vendor/autoload.php';
 
-// Use o namespace da classe Router
 use CoffeeCode\Router\Router;
 
 // Crie uma instância do Router

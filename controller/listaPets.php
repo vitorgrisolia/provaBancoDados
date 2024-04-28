@@ -4,6 +4,7 @@ namespace Controller\ListaPets;
 
 use Model\Pets; 
 use PDO;
+use components\methods\renderView;
 
 class ListaPets
 {
@@ -20,7 +21,6 @@ class ListaPets
         $petsModel = new Pets($this->pdo);
         $pets = $petsModel->all();
 
-        // Passar os dados para a view
-        include 'listaPets.php';
+        renderView('listaPets.php', ['pets' => $pets]);
     }
 }

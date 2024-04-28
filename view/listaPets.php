@@ -34,7 +34,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Os dados dos pets serão preenchidos aqui via JavaScript -->
+                        <?php foreach ($Pets as $pet): ?>
+                            <tr>
+                                <th scope="row"><?php echo $pet['id']; ?></th>
+                                <td><?php echo $pet['nome']; ?></td>
+                                <td><?php echo $pet['especie']; ?></td>
+                                <td><?php echo $pet['raca']; ?></td>
+                                <td><?php echo $pet['idade']; ?></td>
+                                <td><?php echo $pet['proprietario_id']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -42,13 +51,5 @@
     </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- AJAX para carregar a lista de pets -->
-    <script src="listaPets.js"></script>
-    <script>
-        // Adiciona um evento de clique ao botão "Listar Pets"
-        document.getElementById("btnListarPets").addEventListener("click", function() {
-            loadPets();
-        });
-    </script>
 </body>
 </html>

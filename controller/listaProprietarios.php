@@ -3,7 +3,6 @@
 namespace Controllers\listaProprietarios;
 
 use Model\Proprietarios;
-
 use PDO;
 
 class listaProprietarios {

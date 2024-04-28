@@ -31,7 +31,14 @@
                         </tr>
                     </thead>
                     <tbody id="listaProprietariosTableBody">
-                        <!-- Os dados dos proprietários serão carregados aqui -->
+                        <?php foreach ($proprietarios as $proprietario): ?>
+                            <tr>
+                                <th scope="row"><?php echo $proprietario['id']; ?></th>
+                                <td><?php echo $proprietario['nome']; ?></td>
+                                <td><?php echo $proprietario['telefone']; ?></td>
+                                <td><?php echo $proprietario['email']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -39,7 +46,5 @@
     </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Inclua o arquivo JavaScript -->
-    <script src="listaProprietarios.js"></script>
 </body>
 </html>
