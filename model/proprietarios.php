@@ -1,9 +1,11 @@
 <?php
 
+namespace Model;
+
 use CoffeeCode\DataLayer\DataLayer;
 use PDO;
 
-class proprietarios extends DataLayer
+class Proprietarios extends DataLayer
 {
 
     public function __construct()

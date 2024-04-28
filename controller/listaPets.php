@@ -1,24 +1,26 @@
 <?php
 
-namespace Controllers\listaPets;
+namespace Controller\ListaPets; 
 
-use model\pets;
-
+use Model\Pets; 
 use PDO;
 
-class listaPets {
+class ListaPets
+{
     private $pdo;
 
-    public function __construct(PDO $pdo) {
+    public function __construct(PDO $pdo)
+    {
         $this->pdo = $pdo;
     }
 
-    public function listaPets() {
-        // Obter todos os proprietários usando o método estático all() da classe pets
-        $petsModel = new \Pets($this->pdo);
+    public function listaPets()
+    {
+        // Obter todos os pets usando o método all() da classe Pets
+        $petsModel = new Pets($this->pdo);
         $pets = $petsModel->all();
 
-        // Passa os dados para a view
+        // Passar os dados para a view
         include 'listaPets.php';
     }
 }
