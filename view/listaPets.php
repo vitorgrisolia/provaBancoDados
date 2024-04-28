@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Pets</title>
-    <!-- Bootstrap CSS -->
+    <title>PetShopp Amigão</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+    <div>
+        <nav class="navbar navbar-light bg-light">
+            <form class="container-fluid justify-content-center">
+                <a href="/" class="btn btn-outline-success me-2">home</a>
+                <a href="/listaProprietarios" class="btn btn-outline-success me-2">Listar Proprietários</a>
+                <button class="btn btn-outline-success me-2" id="btnListarPets">Listar Pets</button>
+            </form>
+        </nav>
+    </div>
+
+    <!-- Conteúdo da página aqui -->
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -24,16 +34,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($listaDePets as $pet): ?>
-                            <tr>
-                                <th scope="row"><?php echo $pet['id']; ?></th>
-                                <td><?php echo $pet['nome']; ?></td>
-                                <td><?php echo $pet['especie']; ?></td>
-                                <td><?php echo $pet['raca']; ?></td>
-                                <td><?php echo $pet['idade']; ?></td>
-                                <td><?php echo $pet['proprietario_id']; ?></td>
-                            </tr>
-                        <?php endforeach; ?>
+                        <!-- Os dados dos pets serão preenchidos aqui via JavaScript -->
                     </tbody>
                 </table>
             </div>
@@ -41,5 +42,13 @@
     </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- AJAX para carregar a lista de pets -->
+    <script src="listaPets.js"></script>
+    <script>
+        // Adiciona um evento de clique ao botão "Listar Pets"
+        document.getElementById("btnListarPets").addEventListener("click", function() {
+            loadPets();
+        });
+    </script>
 </body>
 </html>

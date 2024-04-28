@@ -12,7 +12,7 @@ $router = new Router("route");
 $router->namespace("Test");
 
 // Defina as rotas usando os métodos HTTP correspondentes
-$router->get("/", function () {
+$router->get("/home", function () {
     include __DIR__ . 'index.php';
 });
 $router->get("/listaProprietarios", function () {
