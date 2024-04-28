@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Proprietários</title>
+    <title>Lista de Pets</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <h1>teste</h1>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h2 class="text-center mb-4">Lista de Proprietários</h2>
+                <h2 class="text-center mb-4">Lista de Pets</h2>
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Telefone</th>
-                            <th scope="col">E-mail</th>
+                            <th scope="col">Espécie</th>
+                            <th scope="col">Raça</th>
+                            <th scope="col">Idade</th>
+                            <th scope="col">Proprietário ID</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($proprietarios as $proprietario): ?>
+                        <?php foreach ($listaDePets as $pet): ?>
                             <tr>
-                                <th scope="row"><?php echo $proprietario['id']; ?></th>
-                                <td><?php echo $proprietario['nome']; ?></td>
-                                <td><?php echo $proprietario['telefone']; ?></td>
-                                <td><?php echo $proprietario['email']; ?></td>
+                                <th scope="row"><?php echo $pet['id']; ?></th>
+                                <td><?php echo $pet['nome']; ?></td>
+                                <td><?php echo $pet['especie']; ?></td>
+                                <td><?php echo $pet['raca']; ?></td>
+                                <td><?php echo $pet['idade']; ?></td>
+                                <td><?php echo $pet['proprietario_id']; ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

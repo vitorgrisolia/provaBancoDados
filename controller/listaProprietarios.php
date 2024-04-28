@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers\listaPorprietarios;
+namespace Controllers\listaProprietarios;
 
 use model\proprietarios;
 
@@ -17,9 +17,8 @@ class listaProprietarios {
         // Obter todos os proprietários usando o método estático all() da classe proprietarios
         $proprietariosModel = new \proprietarios($this->pdo);
         $proprietarios = $proprietariosModel->all();
-        
+
         // Passa os dados para a view
         include 'listaProprietarios.php';
     }
 }
-

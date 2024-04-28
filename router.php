@@ -6,7 +6,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use CoffeeCode\Router\Router;
 
 // Crie uma instância do Router
-$router = new Router("router");
+$router = new Router("route");
 
 // Configure as rotas e namespaces
 $router->namespace("Test");
@@ -16,7 +16,10 @@ $router->get("/", function () {
     include __DIR__ . 'index.php';
 });
 $router->get("/listaProprietarios", function () {
-    include __DIR__ . '/controller/listaProprietarios.php';
+    include __DIR__ . 'controller/listaProprietarios.php';
+});
+$router->get("/listaPets", function () {
+    include __DIR__ . 'controller/listaPets.php';
 });
 
 // Execute as rotas
