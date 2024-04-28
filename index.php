@@ -8,12 +8,12 @@
 </head>
 <body>
     <div>
-        <nav class="nav flex-column">
-            <a class="nav-link active" aria-current="page" href="#">home</a>
-            <a class="nav-link" href="/listaproprietarios">Lista de proprietarios</a>
-            <a class="nav-link" href="#">cadastro de clientes</a>
-            <a class="nav-link" href="#">cadastro de Pets</a>
-        </nav>
+    <nav class="navbar navbar-light bg-blue">
+        <form class="container-fluid justify-content-center">
+            <a href="/listaproprietarios" class="btn btn-outline-success me-2">Listar Proprietários</a>
+            <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+        </form>
+    </nav>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
