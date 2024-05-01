@@ -4,15 +4,18 @@ require_once __DIR__ . '/vendor/autoload.php';
 use CoffeeCode\Router\Router;
 
 // Crie uma instância do Router
-$router = new Router("http://localhost/provabancodados");
+$router = new Router("URL_BASE");
 
 // Configure as rotas e namespaces
-$router->namespace("Controller");
+$router->namespace(namespace:"Controller");
 
-// Defina as rotas usando os métodos HTTP correspondentes
+$router->group(group:null);
 $router->get("/", function () {
     include __DIR__ . '/index.php';
 });
+
+$router->group(group:"provabancodados");
+
 $router->get("/listaProprietarios", function () {
     include __DIR__ . '/Controller/listaProprietarios.php';
 });
@@ -20,22 +23,24 @@ $router->get("/listaPets", function () {
     include __DIR__ . '/Controller/listaPets.php';
 });
 
-// Rota para o formulário de cadastro de proprietários
 $router->get("/cadastroProprietario", function () {
     include __DIR__ . 'Controller/cadastro_proprietario.php';
 });
+$router->post("/cadastroProprietario", function () {
+    include __DIR__ . 'Controller/cadastro_proprietario.php';
+});
 
-// Rota para processar o cadastro de proprietários
+$router->get("/cadastroPet", function () {
+    include __DIR__ . 'Controller/cadastro_pets.php';
+});
+$router->post("/cadastroPet", function () {
+    include __DIR__ . 'Controller/cadastro_pets.php';
+});
+
 $router->post("/salvarProprietario", function () {
     include __DIR__ . 'View/cadastro_proprietario.php';
 });
 
-// Rota para o formulário de cadastro de pets
-$router->get("/cadastroPet", function () {
-    include __DIR__ . 'Controller/cadastro_pets.php';
-});
-
-// Rota para processar o cadastro de pets
 $router->post("/salvarPet", function () {
     include __DIR__ . 'View/cadastro_pets.php';
 });

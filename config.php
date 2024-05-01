@@ -14,3 +14,5 @@ define("DATA_LAYER_CONFIG", [
         PDO::ATTR_CASE => PDO::CASE_NATURAL
     ]
 ]);
+
+define("URL_BASE", "https://www.localhost/provabancodados");

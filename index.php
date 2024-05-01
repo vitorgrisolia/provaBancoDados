@@ -16,16 +16,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="provaBancoDados/listaProprietarios">Listar Proprietários</a>
+                        <a class="nav-link" href="listaProprietarios">Listar Proprietários</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="provaBancoDados/listaPets">Listar Pets</a>
+                        <a class="nav-link" href="listaPets">Listar Pets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="provaBancoDados/cadastroPet">Cadastrar Pet</a>
+                        <a class="nav-link" href="cadastroPet">Cadastrar Pet</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="provaBancoDados/cadastroProprietarios">Cadastrar Proprietários</a>
+                        <a class="nav-link" href="cadastroProprietarios">Cadastrar Proprietários</a>
                     </li>
                 </ul>
             </div>
