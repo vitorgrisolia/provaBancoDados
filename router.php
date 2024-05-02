@@ -20,27 +20,15 @@ $router->get("/listaProprietarios", "Controller\listaProprietarios:listaPropriet
 
 $router->get("/listaPets", "Controller\listaPets:listaPets");
 
-$router->get("/cadastroProprietario", function () {
-    include __DIR__ . 'Controller/cadastro_proprietario.php';
-});
-$router->post("/cadastroProprietario", function () {
-    include __DIR__ . 'Controller/cadastro_proprietario.php';
-});
+$router->get("/cadastroProprietario","Controller\cadastro_proprietarios:salvarProprietario");
+$router->post("/cadastroProprietario", "Controller\cadastro_proprietarios:salvarProprietario");
 
-$router->get("/cadastroPet", function () {
-    include __DIR__ . 'Controller/cadastro_pets.php';
-});
-$router->post("/cadastroPet", function () {
-    include __DIR__ . 'Controller/cadastro_pets.php';
-});
+$router->get("/cadastroPets","Controller\cadastro_pets:salvarpets");
+$router->post("/cadastroPet", "View\cadastro_pets:salvarpets");
 
-$router->post("/salvarProprietario", function () {
-    include __DIR__ . 'View/cadastro_proprietario.php';
-});
+$router->post("/salvarProprietario","View/cadastro_proprietario.php");
 
-$router->post("/salvarPet", function () {
-    include __DIR__ . 'View/cadastro_pets.php';
-});
+$router->post("/salvarPet", "View/cadastro_pets.php");
 
 // Execute as rotas
 $router->dispatch();
