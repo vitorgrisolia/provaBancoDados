@@ -16,12 +16,9 @@ $router->get("/", function () {
 
 $router->group(group:"provabancodados");
 
-$router->get("/listaProprietarios", function () {
-    include __DIR__ . '/Controller/listaProprietarios.php';
-});
-$router->get("/listaPets", function () {
-    include __DIR__ . '/Controller/listaPets.php';
-});
+$router->get("/listaProprietarios", "Controller\listaProprietarios:listaProprietarios");
+
+$router->get("/listaPets", "Controller\listaPets:listaPets");
 
 $router->get("/cadastroProprietario", function () {
     include __DIR__ . 'Controller/cadastro_proprietario.php';

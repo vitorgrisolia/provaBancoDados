@@ -3,16 +3,20 @@
 namespace Controllers\listaProprietarios;
 
 require_once 'config.php';
+require_once 'componentes\methods\renderView.php';
 
 use Model\Proprietarios;
 use PDO;
 use PDOException;
+use components\methods\ViewRenderer;
 
 class SalvarProprietario {
     private $pdo;
+    private $viewRenderer;
 
-    public function __construct(PDO $pdo) {
+    public function __construct(PDO $pdo, ViewRenderer $viewRenderer) {
         $this->pdo = $pdo;
+        $this->viewRenderer = $viewRenderer;
     }
 
     public function salvarProprietario() {
@@ -43,5 +47,6 @@ $password = DATA_LAYER_CONFIG['passwd'];
 
 $pdo = new PDO($dsn, $username, $password, DATA_LAYER_CONFIG['options']);
 
-$controller = new SalvarProprietario($pdo);
+$viewRenderer = new ViewRenderer($arg1, $agr2);
+$controller = new SalvarProprietario($pdo, $viewRenderer);
 $controller->salvarProprietario();

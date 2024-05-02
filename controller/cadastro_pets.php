@@ -3,16 +3,20 @@
 namespace Controllers\listaProprietarios;
 
 require_once 'config.php';
+require_once 'components\methods\renderView.php';
 
 use Model\Pets;
 use PDO;
 use PDOException;
+use components\methods\ViewRenderer;
 
 class SalvarPet {
     private $pdo;
+    private $viewRenderer;
 
-    public function __construct(PDO $pdo) {
+    public function __construct(PDO $pdo, ViewRenderer $viewRenderer) {
         $this->pdo = $pdo;
+        $this->viewRenderer = $viewRenderer;
     }
 
     public function salvarPet() {
@@ -45,5 +49,6 @@ $password = DATA_LAYER_CONFIG['passwd'];
 
 $pdo = new PDO($dsn, $username, $password, DATA_LAYER_CONFIG['options']);
 
-$controller = new SalvarPet($pdo);
+$viewRenderer = new ViewRenderer($arg1, $arg2); // Instancie o ViewRenderer conforme necessário
+$controller = new SalvarPet($pdo, $viewRenderer);
 $controller->salvarPet();

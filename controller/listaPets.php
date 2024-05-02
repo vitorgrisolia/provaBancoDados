@@ -1,18 +1,20 @@
 <?php
 
-namespace Controller\ListaPets; 
+namespace Controller\ListaPets;
 
-use Model\Pets; 
+use Model\Pets;
 use PDO;
-use components\methods\renderView;
+use components\methods\ViewRenderer;
 
 class ListaPets
 {
     private $pdo;
+    private $viewRenderer;
 
-    public function __construct(PDO $pdo)
+    public function __construct(PDO $pdo, ViewRenderer $viewRenderer)
     {
         $this->pdo = $pdo;
+        $this->viewRenderer = $viewRenderer;
     }
 
     public function listaPets()
@@ -21,6 +23,7 @@ class ListaPets
         $petsModel = new Pets($this->pdo);
         $pets = $petsModel->all();
 
-        renderView('listaPets.php', ['pets' => $pets]);
+        // Renderizar a view e passar os dados
+        return $this->viewRenderer->renderView('listaPets', ['pets' => $pets]);
     }
 }
